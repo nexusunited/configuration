@@ -1,18 +1,11 @@
 <?php
 
-namespace NxsSpryker\Zed\Configuration\Business;
+namespace NxsSpryker\Zed\Configuration\Business\Model;
 
 use Generated\Shared\Transfer\ConfigurationTransfer;
 
-interface ConfigurationFacadeInterface
+interface ConfigurationWriterInterface
 {
-    /**
-     * @param string $key
-     *
-     * @return \Generated\Shared\Transfer\ConfigurationTransfer
-     */
-    public function getConfiguration(string $key): ConfigurationTransfer;
-
     /**
      * @param \Generated\Shared\Transfer\ConfigurationTransfer $configurationTransfer
      *
