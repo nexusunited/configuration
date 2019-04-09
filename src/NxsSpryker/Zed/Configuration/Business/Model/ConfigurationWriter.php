@@ -37,7 +37,7 @@ class ConfigurationWriter implements ConfigurationWriterInterface
     public function setConfiguration(ConfigurationTransfer $configurationTransfer): void
     {
         $configurationValue = $this->configurationValueResolver->resolveConfigurationValue($configurationTransfer->getKey());
-        if ($configurationTransfer->getValue() === null && $configurationValue->isNullable() === false) {
+        if (!$configurationTransfer->getValue() && $configurationValue->isNullable() === false) {
             $configurationTransfer->setValue($configurationValue->getDefaultValue());
         }
         $this->entityManager->setConfigurationValue($configurationTransfer);

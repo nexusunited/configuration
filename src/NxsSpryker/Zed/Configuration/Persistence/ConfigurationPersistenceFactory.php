@@ -2,8 +2,8 @@
 
 namespace NxsSpryker\Zed\Configuration\Persistence;
 
-use NxsSpryker\Zed\Persistence\Mapper\ConfigurationMapper;
-use NxsSpryker\Zed\Persistence\Mapper\ConfigurationMapperInterface;
+use NxsSpryker\Zed\Configuration\Persistence\Mapper\ConfigurationMapper;
+use NxsSpryker\Zed\Configuration\Persistence\Mapper\ConfigurationMapperInterface;
 use Orm\Zed\Configuration\Persistence\NxsConfigurationQuery;
 use Spryker\Zed\Kernel\Persistence\AbstractPersistenceFactory;
 

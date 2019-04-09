@@ -11,7 +11,7 @@
         <column name="value" required="true" size="255" type="VARCHAR"/>
         <column name="created" type="TIMESTAMP" defaultExpr="CURRENT_TIMESTAMP"/>
         <index>
-            <index-column name="name"/>
+            <index-column name="key"/>
         </index>
         <unique name="nxs_configuration_unique_key">
             <unique-column name="key"/>

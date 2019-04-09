@@ -1,6 +1,6 @@
 <?php
 
-namespace NxsSpryker\Zed\Persistence\Mapper;
+namespace NxsSpryker\Zed\Configuration\Persistence\Mapper;
 
 use Generated\Shared\Transfer\ConfigurationTransfer;
 use Orm\Zed\Configuration\Persistence\NxsConfiguration;

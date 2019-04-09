@@ -1,10 +1,10 @@
 <?php
 
-namespace NxsSpryker\Shared\Config;
+namespace NxsSpryker\Zed\Configuration;
 
 use Spryker\Zed\Kernel\Business\FacadeLocator;
 
-trait PersistenceConfigTrait
+trait PersistenceConfigurationTrait
 {
     private static $bundle = 'Configuration';
 
@@ -23,7 +23,7 @@ trait PersistenceConfigTrait
      */
     private function getConfigurationFacade()
     {
-        return $this->getFacadeLocator()->locate(PersistenceConfigTrait::$bundle);
+        return $this->getFacadeLocator()->locate(static::$bundle);
     }
 
     /**
