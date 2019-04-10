@@ -18,7 +18,7 @@ class ConfigurationPersistenceFactory extends AbstractPersistenceFactory
     }
 
     /**
-     * @return \NxsSpryker\Zed\Persistence\Mapper\ConfigurationMapperInterface
+     * @return \NxsSpryker\Zed\Configuration\Persistence\Mapper\ConfigurationMapperInterface
      */
     public function createConfigurationMapper(): ConfigurationMapperInterface
     {
