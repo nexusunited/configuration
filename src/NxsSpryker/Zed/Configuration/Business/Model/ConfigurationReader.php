@@ -41,6 +41,9 @@ class ConfigurationReader implements ConfigurationReaderInterface
         if ($configurationTransfer->getValue() === null) {
             $configurationTransfer->setValue($configurationValue->getDefaultValue());
         }
+        if ($configurationValue->isSerializable() && $configurationTransfer->getValue() !== null) {
+            $configurationTransfer->setValue(\unserialize($configurationTransfer->getValue()));
+        }
 
         return $configurationTransfer;
     }
