@@ -4,6 +4,7 @@ namespace NxsSpryker\Zed\Configuration\Business\Model;
 
 use Generated\Shared\Transfer\ConfigurationTransfer;
 use NxsSpryker\Zed\Configuration\Persistence\ConfigurationEntityManagerInterface;
+use Pyz\Shared\Configurations\ConfigurationsConstants;
 
 class ConfigurationWriter implements ConfigurationWriterInterface
 {
@@ -40,6 +41,10 @@ class ConfigurationWriter implements ConfigurationWriterInterface
         if (!$configurationTransfer->getValue() && $configurationValue->isNullable() === false) {
             $configurationTransfer->setValue($configurationValue->getDefaultValue());
         }
+        if ($configurationValue->isSerializable() && $configurationTransfer->getValue() !== null) {
+            $configurationTransfer->setValue(\serialize($configurationTransfer->getValue()));
+        }
+
         $this->entityManager->setConfigurationValue($configurationTransfer);
     }
 }

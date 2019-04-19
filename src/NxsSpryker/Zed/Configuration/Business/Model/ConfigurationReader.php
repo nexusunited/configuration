@@ -38,6 +38,9 @@ class ConfigurationReader implements ConfigurationReaderInterface
     {
         $configurationValue = $this->configurationValueResolver->resolveConfigurationValue($key);
         $configurationTransfer = $this->repository->getConfiguration($key);
+        if ($configurationValue->isSerializable() && $configurationTransfer->getValue() !== null) {
+            $configurationTransfer->setValue(\unserialize($configurationTransfer->getValue()));
+        }
         if ($configurationTransfer->getValue() === null) {
             $configurationTransfer->setValue($configurationValue->getDefaultValue());
         }

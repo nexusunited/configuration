@@ -10,12 +10,17 @@ interface ConfigurationValueInterface
     public function getKey(): string;
 
     /**
-     * @return string
+     * @return mixed
      */
-    public function getDefaultValue(): string;
+    public function getDefaultValue();
 
     /**
      * @return bool
      */
     public function isNullable(): bool;
+
+    /**
+     * @return bool
+     */
+    public function isSerializable(): bool;
 }
