@@ -11,9 +11,9 @@ trait PersistenceConfigurationTrait
     /**
      * @param string $key
      *
-     * @return string|null
+     * @return string|array|mixed
      */
-    protected function getFromPersistence(string $key): ?string
+    protected function getFromPersistence(string $key)
     {
         return $this->getConfigurationFacade()->getConfiguration($key)->getValue();
     }
